@@ -33,3 +33,19 @@ void intDLinkedList::getAllData()
 		curr = curr->next;
 	}
 }
+void intDLinkedList::addBack(int inData)
+{
+	intDNode* newNode = new intDNode;
+	newNode->data = inData;
+	newNode->next = trailer;
+	newNode->prev = trailer->prev;
+    trailer->prev->next = newNode;
+	trailer->prev = newNode;
+}
+void intDLinkedList::removeFront()
+{
+	intDNode* old = header->next;
+	header->next = old->next;
+	old->next->prev = header;
+	delete old;
+}

@@ -12,7 +12,9 @@ public:
 	intDLinkedList();
 	bool isEmpty() const;
 	void addFront(int inData);
-	void getAllData();
+	void getAllData(); 
+	void addBack(int inData);
+	void removeFront();
 	/*~intDLinkedList();
 	
 	const int& front() const;
