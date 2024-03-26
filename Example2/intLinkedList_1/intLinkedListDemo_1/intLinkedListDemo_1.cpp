@@ -8,7 +8,7 @@ using namespace std;
 
 int main()
 {
-    intNode myNode(5);
+   /* intNode myNode(5);
     intNode* nextNode = new intNode(23);
     myNode.setNext(nextNode);
     intNode* currentNode = &myNode;
@@ -17,17 +17,17 @@ int main()
         cout << currentNode->getData() << endl;
         currentNode = currentNode->getNext();
 
-    }
+    }*/
 
-    ////============================================
-    //intLinkedList* myLinkList = new intLinkedList();
-    //
-    //myLinkList->addFront(23);
-    //myLinkList->addFront(34);
-    //myLinkList->addFront(54);
-    //
-    //cout << myLinkList->front() << endl;
-    //myLinkList->getAllData();
+    //============================================
+    intLinkedList* myLinkList = new intLinkedList();
+    
+    myLinkList->addFront(23);
+    myLinkList->addFront(34);
+    myLinkList->addFront(54);
+    
+    cout << myLinkList->front() << endl;
+    myLinkList->getAllData();
 
     
 }
