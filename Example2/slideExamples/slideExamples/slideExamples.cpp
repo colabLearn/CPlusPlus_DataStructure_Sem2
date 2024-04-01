@@ -5,6 +5,7 @@
 using namespace std;
 #include <string>
 #include "intLinkedListS.h"
+#include "gLinkedListS.h"
 #include <cstdlib>
 
 int add(int a, int b)
@@ -40,12 +41,25 @@ int main()
     //int intVar2 = 54;
     //x = &intVar;
     //y = intVar2;  //This will not work
-    intLinkedListS* myLinkedList = new intLinkedListS;
+    /*intLinkedListS* myLinkedList = new intLinkedListS;
     myLinkedList->addFront(12);
     myLinkedList->addFront(34);
     myLinkedList->addFront(45);
     myLinkedList->addFront(99);
     myLinkedList->printData();
-    cout << myLinkedList->front() << endl;
+    cout << myLinkedList->front() << endl;*/
 
+    gLinkedListS<int>* myList 
+        = new gLinkedListS<int>;
+    myList->addFront(23);
+    myList->addFront(54);
+    myList->printData();
+
+    gLinkedListS<string>* myList2
+        = new gLinkedListS<string>;
+
+    myList2->addFront("Tunji");
+    myList2->addFront("Kunle");
+
+    myList2->printData();
 }
