@@ -74,8 +74,18 @@ int main()
     //myArr.storeAt(2022, 23.4);
     //cout<<myArr.getAt(2022)<<endl;
   
-    gLinkedListD <std::string> myList;
+    gLinkedListD <string> myList;
 
     myList.addFront("123");
+    myList.addBack("Tunji");
+    myList.addBack("768");
+    myList.addBack("Ade");
+    myList.addFront("999");
+    myList.getAllData();
+    cout << "==================" << endl;
+    myList.removeBack();
+    myList.getAllData();
+    cout << "==================" << endl;
+    myList.removeFront();
     myList.getAllData();
 }
