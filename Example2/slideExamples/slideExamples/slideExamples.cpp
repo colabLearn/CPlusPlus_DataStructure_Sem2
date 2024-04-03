@@ -6,7 +6,9 @@ using namespace std;
 #include <string>
 #include "intLinkedListS.h"
 #include "gLinkedListS.h"
+#include "Newarray.h"
 #include <cstdlib>
+
 
 int add(int a, int b)
 {
@@ -49,7 +51,9 @@ int main()
     myLinkedList->printData();
     cout << myLinkedList->front() << endl;*/
 
-    gLinkedListS<int>* myList 
+
+//====generic linkedListDemo=====
+ /*   gLinkedListS<int>* myList 
         = new gLinkedListS<int>;
     myList->addFront(23);
     myList->addFront(54);
@@ -61,5 +65,14 @@ int main()
     myList2->addFront("Tunji");
     myList2->addFront("Kunle");
 
-    myList2->printData();
+    myList2->printData();*/
+
+    Newarray<double> myArr(2000, 2024);
+    //myArr.indexR();
+    cout << myArr.outOfIndex(2023) << endl;
+    myArr.arrCell(199);
+    myArr.storeAt(2022, 23.4);
+    cout<<myArr.getAt(2022)<<endl;
+  
+  
 }
