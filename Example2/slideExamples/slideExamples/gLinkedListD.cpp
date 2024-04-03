@@ -27,12 +27,48 @@ bool gLinkedListD<T>::isEmpty() const
 template <typename T>
 void gLinkedListD<T>::addFront(const T& inData)
 {
+	add(header, inData);
+}
+
+template <typename T>
+void gLinkedListD<T>::addBack(const T& inData) 
+{
+	add(trailer->prev, inData);
+}
+
+template <typename T>
+void gLinkedListD<T>::add(gNodeD<T>* v, const T& inData)
+{
 	gNodeD<T>* newNode = new gNodeD<T>;
 	newNode->data = inData;
-	newNode->next = header->next;
-	newNode->prev = header;
-	header->next->prev = newNode;
-	header->next = newNode;
+	newNode->next = v->next;
+	newNode->prev = v;
+	v->next->prev = newNode;
+	v->next = newNode;
+
+}
+
+template <typename T>
+void gLinkedListD<T>::removeFront()
+{
+	remove(header->next);
+
+}
+
+template <typename T>
+void gLinkedListD<T>::removeBack()
+{
+	remove(trailer->prev);
+}
+
+template <typename T>
+void gLinkedListD<T>::remove(gNodeD<T>* old)
+{
+	gNodeD<T>* u = old->prev;
+	gNodeD<T>* w = old->next;
+	u->next = w;
+	w->prev = u;
+	delete old;
 }
 
 template <typename T>
