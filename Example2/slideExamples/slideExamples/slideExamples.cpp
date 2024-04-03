@@ -2,13 +2,13 @@
 //
 
 #include <iostream>
-using namespace std;
 #include <string>
 #include "intLinkedListS.h"
 #include "gLinkedListS.h"
 #include "Newarray.h"
 #include <cstdlib>
-
+#include "gLinkedListD.h"
+using namespace std;
 
 int add(int a, int b)
 {
@@ -67,12 +67,15 @@ int main()
 
     myList2->printData();*/
 
-    Newarray<double> myArr(2000, 2024);
-    //myArr.indexR();
-    cout << myArr.outOfIndex(2023) << endl;
-    myArr.arrCell(199);
-    myArr.storeAt(2022, 23.4);
-    cout<<myArr.getAt(2022)<<endl;
+    //Newarray<double> myArr(2000, 2024);
+    ////myArr.indexR();
+    //cout << myArr.outOfIndex(2023) << endl;
+    //myArr.arrCell(199);
+    //myArr.storeAt(2022, 23.4);
+    //cout<<myArr.getAt(2022)<<endl;
   
-  
+    gLinkedListD <std::string> myList;
+
+    myList.addFront("123");
+    myList.getAllData();
 }
