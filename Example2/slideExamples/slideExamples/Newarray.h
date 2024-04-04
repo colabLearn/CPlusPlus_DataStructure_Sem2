@@ -22,7 +22,8 @@ public:
 	void indexR() const ;
 	arr<T>& arrCell(const int index);
 	void storeAt( int index,  T data);
-	T getAt(const int index);
+	T* getAt(const int index);
+	Newarray<T>* sort(Newarray<T>*);
 	//
 	/*void storeAt(int index, T data);
 	void getAt();*/

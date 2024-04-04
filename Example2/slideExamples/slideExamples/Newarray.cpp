@@ -74,22 +74,23 @@ void Newarray<T>::storeAt( int index,  T data)
 }
 
 template <typename T>
-T  Newarray<T>::getAt(const int index)
+T*  Newarray<T>::getAt(const int index)
 {
 	arr<T>& myNode = arrCell(index);
 	if (&myNode != nullptr)
 	{
-		return  *myNode.p;
+		return  myNode.p;
 	}
 	else
 	{
-		T* d = nullptr;
+		//T* d = nullptr;
 
-		return *d;
+		return nullptr;
 
 	}
 	
 }
+
 
 
 //Explicit instantiation of the template classes
