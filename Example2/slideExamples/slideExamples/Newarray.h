@@ -16,11 +16,12 @@ public:
 	bool outOfIndex(int index) const;
 	void storeAt(int index, T data);
 	T getAt(const int index);
+	void quickSort(int begin, int end);
+protected:
+	void swap(int i, int j);
+	int partition(int begin, int end);
 	/*
 	
-	arr<T>& arrCell(const int index);
-	void storeAt( int index,  T data);
-	T* getAt(const int index);
 	void quickSort(int begin, int end);
 protected:
 	void swap(int i, int j);

@@ -103,109 +103,42 @@ T Newarray<T>::getAt(const int index)
 
 }
 
-//template <typename T>
-//void Newarray<T>::indexR() const
-//{  
-//	for (int i = min; i <= max; i++)
-//	{
-//		cout << this->cusVal_arrVal[i] << endl;
-//	}
-//}
-//
-//template <typename T>
-//arr<T>& Newarray<T>::arrCell(const int index)
-//{
-//	if (this->outOfIndex(index))
-//	{
-//		cout << "Index out of range!" << endl;
-//		
-//		static arr<T>* arrNode = nullptr;
-//		
-//		return *arrNode;
-//		
-//	}
-//	else
-//	{
-//		arr<T>* curr = head;
-//
-//		while (curr->index != index)
-//		{
-//			curr = curr->next;
-//		}
-//		return *curr;
-//		
-//	}
-//}
-//
-//template <typename T>
-//void Newarray<T>::storeAt( int index,  T data)
-//{
-//	arrCell(index).p = &data;
-//	/*arr<T>* curr = head;
-//	
-//	while (curr->index != index)
-//	{
-//		cout << curr->index << ","<<index <<endl;
-//		curr = curr->next;
-//		
-//	}*/
-//	
-//}
-//
-//template <typename T>
-//T*  Newarray<T>::getAt(const int index)
-//{
-//	arr<T>& myNode = arrCell(index);
-//	if (&myNode != nullptr)
-//	{
-//		return  myNode.p;
-//	}
-//	else
-//	{
-//		//T* d = nullptr;
-//
-//		return nullptr;
-//
-//	}
-//	
-//}
-//
-//template <typename T>
-//void Newarray<T>::swap(int i, int j)
-//{
-//	T temp = *getAt(i);
-//	this->arrCell(i).p = getAt(j);
-//	this->arrCell(j).p = &temp;
-//}
-//
-//template <typename T>
-//void Newarray<T>::quickSort(int begin, int end)
-//{
-//	if (end <= begin) return; //base case
-//
-//	int pivotIndex = partition(begin, end);
-//	quickSort(begin, pivotIndex-1);
-//	quickSort(pivotIndex+1, end);
-//}
-//
-//template <typename T>
-//int Newarray<T>::partition(int begin, int end)
-//{
-//	T pivot = *getAt(end);
-//	int i = begin - 1;
-//	for (int j = begin; j <= end-1; j++)
-//	{
-//		if (this->getAt(j) < &pivot)
-//		{
-//			i++;
-//			swap(i, j);
-//		}
-//	}
-//	i++;
-//	swap(i, end);
-//	return i;
-//}
-//
+template <typename T>
+void Newarray<T>::swap(int i, int j)
+{
+	T temp = getAt(i);
+	storeAt(i, getAt(j));
+	storeAt(j, temp);
+}
+
+template <typename T>
+void Newarray<T>::quickSort(int begin, int end)
+{
+	if (end <= begin) return; //base case
+
+	int pivotIndex = partition(begin, end);
+	quickSort(begin, pivotIndex-1);
+	quickSort(pivotIndex+1, end);
+}
+
+template <typename T>
+int Newarray<T>::partition(int begin, int end)
+{
+	T pivot = getAt(end);
+	int i = begin - 1;
+	for (int j = begin; j <= end-1; j++)
+	{
+		if (this->getAt(j) < pivot)
+		{
+			i++;
+			swap(i, j);
+		}
+	}
+	i++;
+	swap(i, end);
+	return i;
+}
+
 
 	
 	
