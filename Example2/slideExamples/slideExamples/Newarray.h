@@ -1,13 +1,6 @@
 #pragma once
-#include "gLinkedListS.h"
+#include "arrNode.h"
 
-template <typename T>
-struct arr {
-	T* p;
-	int index;
-	arr<T>* next;
-
-};
 
 template <typename T>
 class Newarray
@@ -15,17 +8,27 @@ class Newarray
 private:
 	int min;
 	int max;
-	arr<T>* head;
+	arrNode<T>* arr_head;
 public:
 	Newarray(const int min, const int max);
-	bool outOfIndex(const int index);
-	void indexR() const ;
+	void printData() const;
+	bool isEmpty() const;
+	bool outOfIndex(int index) const;
+	void storeAt(int index, T data);
+	T getAt(const int index);
+	/*
+	
 	arr<T>& arrCell(const int index);
 	void storeAt( int index,  T data);
 	T* getAt(const int index);
-	Newarray<T>* sort(Newarray<T>*);
-	//
+	void quickSort(int begin, int end);
+protected:
+	void swap(int i, int j);
+	int partition(int begin, int end);*/
+		//
 	/*void storeAt(int index, T data);
 	void getAt();*/
 };
+
+
 
