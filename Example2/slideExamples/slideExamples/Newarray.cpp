@@ -112,6 +112,14 @@ void Newarray<T>::swap(int i, int j)
 }
 
 template <typename T>
+void Newarray<T>::sortArray()
+{
+	int b = this->min;
+	int e = this->max;
+	quickSort(b, e);
+}
+
+template <typename T>
 void Newarray<T>::quickSort(int begin, int end)
 {
 	if (end <= begin) return; //base case
@@ -139,10 +147,66 @@ int Newarray<T>::partition(int begin, int end)
 	return i;
 }
 
+template <typename T>
+void Newarray<T>::searchData(T data)
+{
+	arrNode<T>* newNode = this->arr_head;
+	while (newNode != nullptr && *newNode->data != data)
+	{
+		newNode = newNode->next;
+		//cout << *newNode->data << endl;
+	}
+	if (newNode != nullptr)
+	{
+		cout <<"Value: " << data << " found at index: "
+		<< newNode->index << endl;
+	}
+	else
+	{
+		// Handle the case where 'index' is not found in the list
+		std::cerr << "Error: Data not found in the list." << std::endl;
+	}
+}
+
+template <typename T>
+void Newarray<T>::binarySearchData(T data)
+{
+	int s = this->min;
+	int e = this->max;
+	cout << s << " " << e << endl;
+	binarySearch(s, e, data);
+}
+
+template <typename T>
+void Newarray<T>::binarySearch(int start,  int end, T data)
+{
+	if (start > end)
+	{
+		cout << start << " " << end << endl;
+		// Handle the case where 'index' is not found in the list
+		std::cerr << "Error: Data not found in the list." << std::endl;
+		return;
+	}
+	int mid = (start + end) / 2;
+	T midValue = this->getAt(mid);
+	if (midValue == data)
+	{
+		cout << "Value: " << data << " found at index: "
+			<< mid << endl;
+	}
+	else if(midValue >data)
+	{
+		cout << start << " " << mid-1 << endl;
+		binarySearch(start, mid - 1, data);
+	}
+	else
+	{
+		cout << mid + 1 << " " << end << endl;
+		binarySearch(mid + 1,end, data);
+	}
 
 	
-	
-
+}
 
 
 
